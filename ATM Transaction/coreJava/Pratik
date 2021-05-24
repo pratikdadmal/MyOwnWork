@@ -1,0 +1,53 @@
+package DemoTestprogram;
+
+import java.util.Scanner;
+
+public class ATMTransaction {
+	public static void main(String[] args) {
+		
+		int balance=10000, widthdraw = 0, Deposit = 0;
+		
+		Scanner sc = new Scanner(System.in);
+		while(true)
+		{
+			System.out.println("ATM Transaction Machine");
+			System.out.println("1:- Withdraw Money");
+			System.out.println("2:- Deposite Money");
+			System.out.println("3:- Balance Check");
+			System.out.println("4:- Exit");
+			System.out.println("Choose the operation what you want");
+			int n = sc.nextInt();
+			
+			switch(n)
+			{
+			case 1:
+				  System.out.println("Withdraw Your Money");
+				  widthdraw = sc.nextInt();
+				  if(balance>=widthdraw)
+				  {
+				  balance = balance-widthdraw;
+				  }
+				  else
+				  {
+					  System.out.println("Insuffient Balance in Account");
+				  }
+				  System.out.println("Withdraw Succesed");
+				  break;
+				  
+			case 2:
+				  System.out.println("Deposite Your Money ");
+				  Deposit=sc.nextInt();
+				  balance=balance+Deposit;
+				  System.out.println("Deposite Successed");
+				  break;
+			case 3:
+				  System.out.println("Your Current Balance is."+balance);
+				  break;
+				  
+			case 4:
+				 System.exit(0);
+			}
+		}
+	}
+
+}
